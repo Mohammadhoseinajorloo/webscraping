@@ -6,6 +6,7 @@ from abc import ABCMeta, abstractmethod
 class BaseProvider(metaclass=ABCMeta):
     def __init__(self, url):
         self.url = url
+        self.name = self.__class__.__name__
 
     def fetch_page(self, url):
         response = requests.get(url)

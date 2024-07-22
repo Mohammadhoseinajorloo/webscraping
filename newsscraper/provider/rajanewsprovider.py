@@ -1,5 +1,5 @@
 from baseprovider import BaseProvider
-from newsscraper.article import Article
+from webscraping.newsscraper.article import Article
 
 
 class RajanewsProvider(BaseProvider):
@@ -18,6 +18,6 @@ class RajanewsProvider(BaseProvider):
             image = article.find("img")["src"]
             summary = article.find("div", class_="lead").text
             date = self.extract_article_date(link)
-            article_model = Article(image=image, title=title, date=date, link=link, summary=summary)
+            article_model = Article(image=image, title=title, date=date, link=link, summary=summary, provider=self.name)
             articles.append(article_model)
         return articles

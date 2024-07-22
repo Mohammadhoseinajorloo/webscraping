@@ -18,6 +18,6 @@ class AsriranProvider(BaseProvider):
             image = article.find('img')["data-src"]
             summary = article.find("div", class_="lead1").text
             date = self.extract_article_date(link)
-            article_model = Article(image=image, title=title, date=date, link=link, summary=summary)
+            article_model = Article(image=image, title=title, date=date, link=link, summary=summary, provider=self.name)
             articles.append(article_model)
         return articles
