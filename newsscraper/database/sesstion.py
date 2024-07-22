@@ -1,8 +1,7 @@
-from typing import Generic
-
+from typing import Generator
 from webscraping.newsscraper.core.config import settings
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, Session
 
 SQLALCHEMY_DATABASE_URL = settings.DATABASE_URL
 print("Database URL is ", SQLALCHEMY_DATABASE_URL)
@@ -23,7 +22,7 @@ engine = create_engine(
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
-def get_db() -> Generic:
+def get_db():
     db = SessionLocal()
     try:
         yield db

@@ -1,5 +1,5 @@
-from webscraping.newsscraper.provider.rajanewsprovider import RajanewsProvider
 from webscraping.newsscraper.provider.asriranprovider import AsriranProvider
+from webscraping.newsscraper.provider.rajanewsprovider import RajanewsProvider
 from webscraping.newsscraper.core.config import settings
 
 
@@ -15,9 +15,6 @@ def run(massage="wellcome to web scraping app :)"):
     print(f"start scrape {settings.ASRIRAN_URL}...")
     asrirannews = asriran.scrape()
     print(f"end scraping {settings.ASRIRAN_URL}.")
-
-    print(rajanews)
-    print(asrirannews)
 
 
 if __name__ == "__main__":
