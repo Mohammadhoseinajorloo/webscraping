@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Text, Time, create_engine, ForeignKey
+from sqlalchemy import Column, Integer, String, Text, Time, ForeignKey
 from sqlalchemy.orm import relationship
 from ..base_class import Base
 
@@ -10,6 +10,6 @@ class Articles(Base):
     date = Column(Time, nullable=False)
     link = Column(Text, nullable=False)
     pro_id = Column(Integer, ForeignKey("providers.pro_id"))
-    outhor = Column(String, nullable=True)
+    author = Column(String, nullable=True)
     summary = Column(Text, nullable=True)
     provider = relationship("Providers", back_populates="articles")

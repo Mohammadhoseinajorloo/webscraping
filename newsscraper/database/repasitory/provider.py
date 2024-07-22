@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from ..models.provider import Providers
+from webscraping.newsscraper.database.models.provider import Providers
 
 
 def add_provider(provider: str, db: Session):
