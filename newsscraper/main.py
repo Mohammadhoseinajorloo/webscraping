@@ -1,10 +1,24 @@
 from webscraping.newsscraper.provider.rajanewsprovider import RajanewsProvider
 from webscraping.newsscraper.provider.asriranprovider import AsriranProvider
-from webscraping.newsscraper.database.repasitory.article import add_articles
-from webscraping.newsscraper.database.repasitory.provider import add_provider
+from webscraping.newsscraper.core.config import settings
 
-def run()
-    raja
+
+def run(massage="wellcome to web scraping app :)"):
+    print(massage)
+
+    raja = RajanewsProvider(settings.RAJA_URL)
+    asriran = AsriranProvider(settings.ASRIRAN_URL)
+
+    print(f"start scrape {settings.RAJA_URL} ...")
+    rajanews = raja.scrape()
+    print(f"end scraping {settings.RAJA_URL}.")
+    print(f"start scrape {settings.ASRIRAN_URL}...")
+    asrirannews = asriran.scrape()
+    print(f"end scraping {settings.ASRIRAN_URL}.")
+
+    print(rajanews)
+    print(asrirannews)
+
 
 if __name__ == "__main__":
     run()
