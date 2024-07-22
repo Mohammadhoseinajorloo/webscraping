@@ -3,4 +3,4 @@
 .env
 __pycache__/
 .idea/misc.xml
-newsscraper/webscraper.db
+newsscraper/database/webscraper.db
