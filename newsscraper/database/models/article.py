@@ -1,4 +1,3 @@
-from ..base_class import Base
 from sqlalchemy import Column, Integer, String, Text, Time, create_engine, ForeignKey
 from sqlalchemy.orm import relationship
 from ..base_class import Base
