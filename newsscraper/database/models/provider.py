@@ -1,10 +1,10 @@
-from ..base import Base
+from ..base_class import Base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
+from ..base_class import Base
 
 
-class Provider(Base):
-    __tablename__ = "providers"
+class Providers(Base):
     pro_id = Column(Integer, nullable=False, primary_key=True, autoincrement=True)
     name = Column(String, nullable=False)
-    articles = relationship("Article", back_populates="provider")
+    articles = relationship("Articles", back_populates="provider")
