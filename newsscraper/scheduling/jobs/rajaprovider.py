@@ -1,11 +1,5 @@
-from newsscraper.scheduling.base import scheduler
 from newsscraper.scheduling.blocktime.rajaprovider import blocktime_rajaprovider
-from newsscraper.scheduling.blocktime.rajaprovider import blocktime_rajaprovider
-from newsscraper.provider.rajanewsprovider import RajanewsProvider
-from newsscraper.core.config import settings
 
 
-rajanews = RajanewsProvider(settings.RAJA_URL)
-
-scheduler.add_job()
-
+def rajaprovider_job(scheduler, scrapefunc):
+    return scheduler.add_job(scrapefunc, blocktime_rajaprovider, id='rajaprovider')
