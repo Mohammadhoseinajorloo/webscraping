@@ -1,6 +1,7 @@
 from newsscraper.provider.asriranprovider import AsriranProvider
 from newsscraper.provider.rajanewsprovider import RajanewsProvider
 from newsscraper.core.config import settings
+from newsscraper.logs.logs_conf import logger
 
 
 def run(massage="wellcome to web scraping app :)"):
@@ -10,11 +11,15 @@ def run(massage="wellcome to web scraping app :)"):
     asriran = AsriranProvider(settings.ASRIRAN_URL)
 
     print(f"start scrape {settings.RAJA_URL} ...")
+    logger.info(f"start scrape {settings.RAJA_URL} ...")
     rajanews = raja.scrape()
     print(f"end scraping {settings.RAJA_URL}.")
+    logger.info(f"end scraping {settings.RAJA_URL}.")
     print(f"start scrape {settings.ASRIRAN_URL}...")
+    logger.info(f"start scrape {settings.ASRIRAN_URL}...")
     asrirannews = asriran.scrape()
     print(f"end scraping {settings.ASRIRAN_URL}.")
+    logger.info(f"end scraping {settings.ASRIRAN_URL}.")
 
 
 if __name__ == "__main__":
