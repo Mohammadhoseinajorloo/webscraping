@@ -12,7 +12,7 @@ def get_engin():
 Session = sessionmaker(bind=get_engin())
 
 
-def get_sesstion():
+def get_session():
     return Session()
 
 
