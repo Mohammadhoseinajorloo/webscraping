@@ -1,4 +1,4 @@
-from newsscraper.db.base_class import Base
+from webscraping.newsscraper.db.base_class import Base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 

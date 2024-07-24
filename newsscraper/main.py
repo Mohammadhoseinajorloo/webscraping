@@ -1,9 +1,9 @@
-from newsscraper.provider.asriranprovider import AsriranProvider
-from newsscraper.provider.rajanewsprovider import RajanewsProvider
-from newsscraper.core.config import settings
-from newsscraper.scheduling.scheduler import scheduler
-from newsscraper.scheduling.jobs.rajaprovider import rajaprovider_job
-from newsscraper.scheduling.jobs.asriranprovider import asriranprovider_job
+from webscraping.newsscraper.provider.asriranprovider import AsriranProvider
+from webscraping.newsscraper.provider.rajanewsprovider import RajanewsProvider
+from webscraping.newsscraper.core.config import settings
+from webscraping.newsscraper.scheduling.scheduler import scheduler
+from webscraping.newsscraper.scheduling.jobs.rajaprovider import rajaprovider_job
+from webscraping.newsscraper.scheduling.jobs.asriranprovider import asriranprovider_job
 
 
 def rajascraper(url):

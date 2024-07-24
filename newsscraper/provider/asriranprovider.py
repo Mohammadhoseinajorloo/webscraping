@@ -1,6 +1,6 @@
-from newsscraper.provider.baseprovider import BaseProvider
-from newsscraper.article import Article
-from newsscraper.logs.logs_conf import logger
+from webscraping.newsscraper.provider.baseprovider import BaseProvider
+from webscraping.newsscraper.article import Article
+from webscraping.newsscraper.logs.logs_conf import logger
 
 
 class AsriranProvider(BaseProvider):

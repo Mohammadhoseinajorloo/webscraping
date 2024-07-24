@@ -1,4 +1,4 @@
-from newsscraper.scheduling.blocktime.asriranprovider import blocktime_asriranprovider
+from webscraping.newsscraper.scheduling.blocktime.asriranprovider import blocktime_asriranprovider
 
 
 def asriranprovider_job(scheduler, scrapefunc):

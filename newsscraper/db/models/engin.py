@@ -1,19 +1,10 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-
 from webscraping.newsscraper.core.config import settings
 from webscraping.newsscraper.db.base_class import Base
 
 
 def get_engin():
     return create_engine(settings.DATABASE_URL)
-
-
-Session = sessionmaker(bind=get_engin())
-
-
-def get_session():
-    return Session()
 
 
 def create_table():

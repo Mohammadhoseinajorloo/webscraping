@@ -1,6 +1,5 @@
-from newsscraper.core.config import settings
+from webscraping.newsscraper.core.config import settings
 import logging
-import sys
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)

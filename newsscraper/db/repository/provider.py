@@ -8,6 +8,6 @@ def get_provider(name: str, session: Session):
 
 
 def add_provider(name: str, session: Session):
-    provider = Provider(name)
+    provider = Provider(pro_name=name)
     session.add(provider)
     session.commit()

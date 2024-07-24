@@ -4,7 +4,7 @@ from abc import ABCMeta, abstractmethod
 
 from webscraping.newsscraper.db.repository.articles import add_articles
 from webscraping.newsscraper.db.repository.provider import get_provider, add_provider
-from webscraping.newsscraper.db.models.engin import get_session
+from webscraping.newsscraper.db.session import get_session
 from webscraping.newsscraper.logs.logs_conf import logger
 
 
