@@ -6,7 +6,7 @@ from sqlalchemy.orm import relationship
 class Article(Base):
     art_id = Column(Integer, primary_key=True)
     title = Column(String, nullable=False)
-    summary = Column(Text, nullable=True)
+    summary = Column(Text, nullable=False)
     pro_id = Column(Integer, ForeignKey("provider.pro_id"))
     provider = relationship("Provider", back_populates="article")
     date = Column(DateTime, nullable=False)

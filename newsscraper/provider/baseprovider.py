@@ -2,8 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 from abc import ABCMeta, abstractmethod
 import time
-
-from newsscraper.logs.logs_conf import logger
+from webscraping.newsscraper.db.repository.articles import add_articles
+from webscraping.newsscraper.db.repository.provider import get_provider, add_provider
+from webscraping.newsscraper.db.models.engin import get_session
+from webscraping.newsscraper.logs.logs_conf import logger
 
 
 class BaseProvider(metaclass=ABCMeta):
@@ -23,6 +25,15 @@ class BaseProvider(metaclass=ABCMeta):
     def extract_articles(self, html):
         pass
 
+    def save_to_db(self, articles):
+        session = get_session()
+        provider = get_provider(self.name, session)
+        if not provider:
+            add_provider(self.name, session)
+
+        add_articles(articles, session)
+        session.close()
+
     def scrape(self):
         print(f"start scrape {self.url} ...")
         logger.info(f"start scrape {self.url} ...")
@@ -32,5 +43,8 @@ class BaseProvider(metaclass=ABCMeta):
             articles = self.extract_articles(soup)
             print(f"end scraping {self.url}.")
             logger.info(f"end scraping {self.url}.")
+            logger.info("saving articles to db ...")
+            self.save_to_db(articles)
+            logger.info("seved all articles in db.")
             return articles
         return []
