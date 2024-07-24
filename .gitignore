@@ -3,5 +3,5 @@
 .env
 __pycache__/
 .idea/misc.xml
-newsscraper/database/webscraper.db
+newsscraper/database/newsscrape.db
 newsscraper/logs/roadmap.log
