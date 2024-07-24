@@ -1,5 +1,5 @@
-from webscraping.newsscraper.provider.baseprovider import BaseProvider
-from webscraping.newsscraper.article import Article
+from newsscraper.provider.baseprovider import BaseProvider
+from newsscraper.article import Article
 
 
 class AsriranProvider(BaseProvider):
