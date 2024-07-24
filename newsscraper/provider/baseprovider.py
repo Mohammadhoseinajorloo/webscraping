@@ -1,6 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 from abc import ABCMeta, abstractmethod
+import time
+
+from newsscraper.logs.logs_conf import logger
 
 
 class BaseProvider(metaclass=ABCMeta):
@@ -21,8 +24,13 @@ class BaseProvider(metaclass=ABCMeta):
         pass
 
     def scrape(self):
+        print(f"start scrape {self.url} ...")
+        logger.info(f"start scrape {self.url} ...")
         html = self.fetch_page(url=self.url)
         if html:
             soup = self.parse_page(html)
-            return self.extract_articles(soup)
+            articles = self.extract_articles(soup)
+            print(f"end scraping {self.url}.")
+            logger.info(f"end scraping {self.url}.")
+            return articles
         return []
