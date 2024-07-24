@@ -27,13 +27,16 @@ class BaseProvider(metaclass=ABCMeta):
 
     def save_to_db(self, articles):
         session = get_session()
+        logger.info("checking exist provider in db ...")
         provider = get_provider(self.name, session)
         if not provider:
+            logger.info("not finde provider and creating new provider")
             add_provider(self.name, session)
 
+        logger.info(f"provider {provider} exist in db.")
         add_articles(articles, session)
         session.close()
-
+    
     def scrape(self):
         print(f"start scrape {self.url} ...")
         logger.info(f"start scrape {self.url} ...")
