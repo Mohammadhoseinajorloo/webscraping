@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from abc import ABCMeta, abstractmethod
-import time
+
 from webscraping.newsscraper.db.repository.articles import add_articles
 from webscraping.newsscraper.db.repository.provider import get_provider, add_provider
 from webscraping.newsscraper.db.models.engin import get_session
@@ -36,7 +36,7 @@ class BaseProvider(metaclass=ABCMeta):
         logger.info(f"provider {provider} exist in db.")
         add_articles(articles, session)
         session.close()
-    
+
     def scrape(self):
         print(f"start scrape {self.url} ...")
         logger.info(f"start scrape {self.url} ...")

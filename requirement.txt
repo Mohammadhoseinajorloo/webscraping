@@ -2,11 +2,14 @@ APScheduler==3.10.4
 beautifulsoup4==4.12.3
 certifi==2024.7.4
 charset-normalizer==3.3.2
+greenlet==3.0.3
 idna==3.7
 python-dotenv==1.0.1
 pytz==2024.1
 requests==2.32.3
 six==1.16.0
 soupsieve==2.5
+SQLAlchemy==2.0.31
+typing_extensions==4.12.2
 tzlocal==5.2
 urllib3==2.2.2
